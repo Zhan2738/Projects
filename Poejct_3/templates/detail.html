@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #results {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 110%;
+
+        }
+        h1 {text-align: center;}
+        h2 {text-align: center;}
+
+        #results td, #results th {
+            border: 1px solid #ddd;
+            padding: 14px;
+        }
+
+        #results tr:nth-child(even){background-color: #f2f2f2;}
+
+        #results tr:hover {background-color: #ddd;}
+
+        #results th {
+            padding-top: 25px;
+            padding-bottom: 25px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<button>
+<a style="text-decoration: none; color: inherit; font-size: 15pt" href="javascript:history.back()" > Search results </a>
+</button>
+
+<br>
+<br>
+
+<table id="results">
+
+    <tr>
+        <td>Paper Title</td>
+        <td> {{ one_record[0]['title'] }} </td>
+
+    </tr>
+
+    <tr>
+        <td>PubMed ID</td>
+        <td> <a href=" {{one_record[0]['link']}} "> {{ one_record[0]['link'] }} </a> </td>
+
+    </tr>
+
+    <tr>
+        <td>Analyte</td>
+        <td><img src= '{{ url }}' width="300" height="300"></td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td>
+            {% for content in compounds %}
+                <div>{{ content }}</div>
+            {% endfor %}
+        </td>
+
+    </tr>
+    <tr>
+        <td>Method</td>
+        <td> {{ one_record[0]['METHOD'] }} </td>
+
+    </tr>
+    <tr>
+        <td>Flow rate</td>
+        <td> {{ one_record[0]['FLOW RATE'] }} </td>
+
+    </tr>
+    <tr>
+        <td>Limit of Quantification</td>
+        <td> {{ one_record[0]['LIMIT OF QUANTIFICATION'] }} </td>
+
+    </tr>
+
+    <tr>
+        <td>Linear Range</td>
+        <td> {{ one_record[0]['LINEAR RANGE'] }} </td>
+
+    </tr>
+    <tr>
+        <td>Accuracy</td>
+        <td> {{ one_record[0]['ACCURACY'] }} </td>
+
+    </tr>
+    <tr>
+        <td>Precision</td>
+        <td> {{ one_record[0]['PRECISION'] }} </td>
+
+    </tr>
+    <tr>
+        <td>Mass Transition</td>
+        <td> {{ one_record[0]['MASS TRANSITION'] }} </td>
+
+    </tr>
+    <tr>
+        <td>Mobile Phase</td>
+        <td> {{ one_record[0]['MOBILE PHASE'] }} </td>
+
+    </tr>
+    <tr>
+        <td>Internal Standard</td>
+        <td> {{ one_record[0]['INTERNAL STANDARD'] }} </td>
+
+    </tr>
+    <tr>
+        <td>Column Dimensions</td>
+        <td> {{ one_record[0]['COLUMN DIMENSIONS'] }} </td>
+
+    </tr>
+    <tr>
+        <td> Column manufacturer </td>
+        <td> {{ one_record[0]['COLUMN MANUFACTURER'] }} </td>
+    </tr>
+    <tr>
+        <td>Matrix effects</td>
+        <td> {{ one_record[0]['MATRIX EFFECTS'] }} </td>
+
+    </tr>
+    <tr>
+        <td>Selectivity</td>
+        <td> {{ one_record[0]['SELECTIVITY'] }} </td>
+
+    </tr>
+    <tr>
+        <td>Sensitivity</td>
+        <td> {{ one_record[0]['SENSITIVITY'] }} </td>
+
+    </tr>
+    <tr>
+        <td>Coefficient of variation</td>
+        <td> {{ one_record[0]['COEFFICIENT OF VARIATION'] }} </td>
+
+    </tr>
+    <tr>
+        <td>Biological Substance</td>
+        <td> {{ one_record[0]['BIOLOGICAL SUBSTANCE'] }} </td>
+
+    </tr>
+    <tr>
+        <td>Run time</td>
+        <td> {{ one_record[0]['RUN TIME'] }} </td>
+
+    </tr>
+    <tr>
+        <td>Ionization Method</td>
+        <td> {{ one_record[0]['IONIZATION METHOD'] }} </td>
+
+    </tr>
+    <tr>
+        <td>Column temperature</td>
+        <td> {{ one_record[0]['COLUMN TEMPERATURE'] }} </td>
+
+    </tr>
+
+
+</table>
+
+</body>
+</html>

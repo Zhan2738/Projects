@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+
+    h1 {
+      font-family: Arial;
+      text-align: center;
+      font-size: 45px;
+      line-height: 200px;
+    }
+
+    body {
+        background-image: url(https://freepiker-storage.s3.amazonaws.com/preview/light-background-with-different-gradient-color-2-1572631050-preview.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    h3 {
+      font-family: Arial;
+      font-size: 30px;
+      line-height: 10px;
+    }
+
+    input {
+      position: relative;
+      left: 26%;
+      top: -50px;
+      padding:15px;
+      border:2px solid #ccc;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      font-family: Arial;
+      font-size: 20px;
+      width: 500px;
+      height: 20px;
+    }
+
+    input:focus {
+      border-color:#333;
+    }
+
+    button {
+      position: relative;
+      left: 26%;
+      top: -50px;
+      background: lightblue;
+      border: 0 none;
+      cursor: pointer;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      font-family: Arial;
+      font-size: 20px;
+      width: 80px;
+      height: 52px;
+      text-align: center;
+    }
+
+    .alert {
+      position: relative;
+      left: 1%;
+      top: -50px;
+      padding: 20px;
+      margin: 50px;
+      color: #970020;
+      background-color: #ffd5de;
+      font-family: Arial;
+      text-align: center;
+      font-size: 50px;
+    }
+
+    a:link, a:visited {
+      color: black;
+    }
+
+    a:hover {
+      color: red;
+    }
+
+  </style>
+</head>
+
+<body>
+<h1>
+    <span style="color:dodgerblue">HPLC/MS Quantification Protocol References </span>
+</h1>
+<div class="content">
+  {% for message in get_flashed_messages() %}
+  <div class="alert">{{ message }}</div>
+  {% endfor %}
+  {% block content %} {% endblock %}
+</div>
+<form method="GET" action="{{ url_for('search') }}">
+  <input type="text" name="search" autocomplete="off" placeholder="Enter the compound name to search..."> </input>
+    <button type="submit">Search</button>
+
+  <h3>{{record}}</h3>
+  <td>
+    {% for content in title %}
+    <a style="text-decoration: none" href="{{ url_for('protocol_details', type=content) }}">{{ content }}</a>
+    <br>
+    <br>
+    {% endfor %}
+  </td>
+</form>
+</body>
+</html>
