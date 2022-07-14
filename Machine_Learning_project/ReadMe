@@ -1,5 +1,7 @@
-The toic: Using Deep Neural Networks to Predict Protein Secondary Structures
+The topic: Using Deep Neural Networks to Predict Protein Secondary Structures
 
-https://user-images.githubusercontent.com/71567676/179055598-661ae579-62cb-4e87-b8e2-89c61b4a33dd.png
+The input dataset: 
+<img width="908" alt="dataset" src="https://user-images.githubusercontent.com/71567676/179056703-4202e211-fde7-47fd-b429-a5ff78a28531.png">
 
-file:///Users/zhan2738/Desktop/workflow.png
+The workflow of CNN model:
+<img width="972" alt="workflow" src="https://user-images.githubusercontent.com/71567676/179057169-7cd65440-30be-4d2d-be72-9314ecce7616.png">
